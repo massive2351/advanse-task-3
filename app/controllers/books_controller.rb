@@ -5,7 +5,8 @@ class BooksController < ApplicationController
     @bookfind = Book.find(params[:id])
     @book = Book.new
     @user = current_user
-
+    @comment = BookComment.new
+  
     if @user != current_user
       redirect_to user_path(current_user)
     end
